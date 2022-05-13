@@ -63,12 +63,7 @@ export default defineComponent({
 
 <template>
   <div>
-    <component
-      is="PageOne"
-      ref="appRef"
-      @handleSubmit="handleSubmit"
-      :modelProp="store.logicalDataModel"
-    >
+    <component is="PageOne" ref="appRef" @handleSubmit="handleSubmit" :modelProp="store.logicalDataModel">
     </component>
 
     <button @click="nextClick" class="col btn btn-secondary ml-2">
@@ -83,6 +78,7 @@ export default defineComponent({
 [data-classification="text"][data-is-showing-errors="true"],
 [data-classification="select"][data-is-showing-errors="true"] {
   .formulate-input-wrapper {
+
     .formulate-input-element--text,
     .formulate-input-element--number {
       input {
@@ -90,11 +86,12 @@ export default defineComponent({
         background-color: rgba(255, 0, 0, 0.15);
       }
     }
+
     .formulate-input-element--select,
     .formulate-input-element--yearmonthday {
       select {
         border: 1px solid red;
-        background-color: rgba(255, 0, 0, 0.15) !important;
+        background-color: rgba(255, 0, 0, 0.15);
       }
     }
   }

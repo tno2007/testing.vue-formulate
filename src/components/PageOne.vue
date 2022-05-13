@@ -31,36 +31,15 @@ export default defineComponent({
 </script>
 
 <template>
-  <FormulateForm
-    v-model="store.logicalDataModel"
-    @submit="handleSubmit"
-    ref="formRef"
-  >
+  <FormulateForm v-model="store.logicalDataModel" @submit="handleSubmit" ref="formRef">
     <FormulateInput type="group" name="PrimaryApplicant">
-      <FormulateInput
-        type="select"
-        name="PreferredTitle"
-        label="Title:"
-        :validation="[['required']]"
-      />
-      <FormulateInput
-        type="text"
-        name="FirstName"
-        label="First Name:"
-        :validation="[['required']]"
-      />
-      <FormulateInput
-        type="yearmonthday"
-        name="DateOfBirth"
-        label="Date of birth"
-        format="date"
-      />
-      <FormulateInput
-        type="yearmonthday"
-        name="DateOfBirthAlt"
-        label="Date of birth"
-        :validation="[['required']]"
-      />
+      <FormulateInput type="select" name="PreferredTitle" label="Title:" :validation="[['required']]" />
+      <FormulateInput type="text" name="FirstName" label="First Name:" :validation="[['required']]" />
+      <FormulateInput type="yearmonthday" name="DateOfBirth" label="Date of birth" format="date" />
+      <FormulateInput type="yearmonthday" name="DateOfBirthAlt" label="Date of birth" format="date"
+        :validation="[['required']]" :validation-messages="{
+          required: 'Please complete all date fields'
+        }" />
     </FormulateInput>
   </FormulateForm>
 </template>
