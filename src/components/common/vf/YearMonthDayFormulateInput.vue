@@ -215,18 +215,18 @@ const app = defineComponent({
 
     const update = (date: Date, area: string = "") => {
       var randomNumber = random();
-      console.log(`[${randomNumber}] - ==`);
+      //console.log(`[${randomNumber}] - ==`);
 
-      console.log(`[${randomNumber}] - update - ${area} - (${date})`);
+      //console.log(`[${randomNumber}] - update - ${area} - (${date})`);
 
-      console.log("date.getDate()", date.getDate());
+      //console.log("date.getDate()", date.getDate());
 
       //console.log(
       //  `[${randomNumber}] - update - dateIso - (${date.toISOString()})`
       //);
       //console.log(`[${randomNumber}] - update - ${area} - (${date})`);
 
-      console.log("Bef - props.context.model", props.context.model);
+      console.log("Before - props.context.model", props.context.model);
 
       data.updatedContextModel = true;
       if (props.format === "date") {
@@ -235,7 +235,7 @@ const app = defineComponent({
         props.context.model = date.toISOString();
       }
 
-      console.log("Aft - props.context.model", props.context.model);
+      console.log("After - props.context.model", props.context.model);
 
       let year = date.getFullYear();
       let month = date.getMonth();
@@ -261,7 +261,7 @@ const app = defineComponent({
       area: string = ""
     ) => {
       var randomNumber = random();
-      console.log(`[${randomNumber}] - ==`);
+      //console.log(`[${randomNumber}] - ==`);
 
       //console.log(
       //  `${randomNumber} - updating - ${area} - (${year}-${month}-${day})`
@@ -303,7 +303,7 @@ const app = defineComponent({
       //console.log("day", data.selectedDay);
       //console.log("m", Boolean(props.context.model));
 
-      console.log(props.context);
+      //console.log(props.context);
 
       //props.context.model = "789";
 
