@@ -7,9 +7,10 @@ import {
 } from "@vue/composition-api";
 import { useAppStore } from "../stores/appStore";
 import logicalDataModel from "../data/logical-data-model.json";
+import { collections } from "../data/collections";
 
 export default defineComponent({
-  name: "PersonalDetails",
+  name: "PageOne",
   components: {},
   props: {},
   setup(props, context) {
@@ -25,7 +26,7 @@ export default defineComponent({
       store.logicalDataModel = logicalDataModel;
     });
 
-    return { formRef, store, handleSubmit };
+    return { formRef, store, collections, handleSubmit };
   },
 });
 </script>
@@ -61,6 +62,24 @@ export default defineComponent({
         label="Date of birth"
         :validation="[['required']]"
       />
+      <FormulateInput
+        type="group"
+        name="AdditionalPassports"
+        label="Additional passports:"
+        :repeatable="true"
+        #default="{ index }"
+        add-label="+ Add additional passport"
+        :value="[]"
+      >
+        <p>Additional passport {{ index + 1 }}</p>
+        <FormulateInput
+          type="select"
+          name="PassportCountry"
+          label="Passport country"
+          :options="collections.Countries"
+          placeholder="-- Select --"
+        />
+      </FormulateInput>
     </FormulateInput>
   </FormulateForm>
 </template>

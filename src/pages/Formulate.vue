@@ -6,14 +6,19 @@ import {
   ref,
 } from "@vue/composition-api";
 import { useAppStore } from "../stores/appStore";
-import logicalDataModel from "../data/logical-data-model.json";
-import PageOne from "../components/PageOne.vue";
+//import logicalDataModel from "../data/logical-data-model.json";
+import { logicalDataModel } from "../data/logical-data-model";
+import Page1 from "../components/Page1.vue";
+import Page2 from "../components/Page2.vue";
+import Page3 from "../components/Page3.vue";
 import { get, method, set } from "lodash";
 
 export default defineComponent({
   name: "PersonalDetails",
   components: {
-    PageOne,
+    Page1,
+    Page2,
+    Page3,
   },
   props: {},
   setup(props, context) {
@@ -47,6 +52,8 @@ export default defineComponent({
     };
 
     onMounted(() => {
+      logicalDataModel.PrimaryApplicant.AdditionalPassports = [];
+
       const structuredResponse = setObjectsAsArrays(logicalDataModel, [
         "Explore",
         "PrimaryApplicant",
@@ -64,7 +71,7 @@ export default defineComponent({
 <template>
   <div>
     <component
-      is="PageOne"
+      is="Page3"
       ref="appRef"
       @handleSubmit="handleSubmit"
       :modelProp="store.logicalDataModel"
@@ -74,8 +81,6 @@ export default defineComponent({
     <button @click="nextClick" class="col btn btn-secondary ml-2">
       Submit
     </button>
-
-    <pre>{{ store.logicalDataModel }}</pre>
   </div>
 </template>
 

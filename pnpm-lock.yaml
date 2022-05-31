@@ -9,6 +9,7 @@ specifiers:
   '@vue/runtime-dom': ^3.2.31
   date-fns: ^2.28.0
   date-fns-tz: ^1.3.4
+  get-value: ^3.0.1
   lodash: ^4.17.21
   pinia: ^2.0.11
   sass: ^1.51.0
@@ -26,6 +27,7 @@ dependencies:
   '@vue/composition-api': 1.6.1_vue@2.6.14
   date-fns: 2.28.0
   date-fns-tz: 1.3.4_date-fns@2.28.0
+  get-value: 3.0.1
   lodash: 4.17.21
   pinia: 2.0.14_5c6fae726f578b2eef459f8434f132e1
   sass: 1.51.0
@@ -1371,6 +1373,13 @@ packages:
       has-symbols: 1.0.3
     dev: true
 
+  /get-value/3.0.1:
+    resolution: {integrity: sha512-mKZj9JLQrwMBtj5wxi6MH8Z5eSKaERpAwjg43dPtlGI1ZVEgH/qC7T8/6R2OBSUA+zzHBZgICsVJaEIV2tKTDA==}
+    engines: {node: '>=6.0'}
+    dependencies:
+      isobject: 3.0.1
+    dev: false
+
   /glob-parent/5.1.2:
     resolution: {integrity: sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==}
     engines: {node: '>= 6'}
@@ -1504,6 +1513,11 @@ packages:
       call-bind: 1.0.2
       has-tostringtag: 1.0.0
     dev: true
+
+  /isobject/3.0.1:
+    resolution: {integrity: sha512-WhB9zCku7EGTj/HQQRz5aUQEUeoQZH2bWcltRErOpymJ4boYE6wL9Tbr23krRPSZ+C5zqNSrSw+Cc7sZZ4b7vg==}
+    engines: {node: '>=0.10.0'}
+    dev: false
 
   /js-stringify/1.0.2:
     resolution: {integrity: sha1-Fzb939lyTyijaCrcYjCufk6Weds=}
