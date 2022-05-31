@@ -77,7 +77,6 @@ export default defineComponent({
       :modelProp="store.logicalDataModel"
     >
     </component>
-
     <button @click="nextClick" class="col btn btn-secondary ml-2">
       Submit
     </button>
@@ -95,11 +94,12 @@ export default defineComponent({
         background-color: rgba(255, 0, 0, 0.15);
       }
     }
+
     .formulate-input-element--select,
     .formulate-input-element--yearmonthday {
       select {
         border: 1px solid red;
-        background-color: rgba(255, 0, 0, 0.15) !important;
+        background-color: rgba(255, 0, 0, 0.15);
       }
     }
   }

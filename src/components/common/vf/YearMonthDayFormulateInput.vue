@@ -1,54 +1,26 @@
 <template>
-  <div
-    class="year-month-day-group"
-    :class="context.classes.element"
-    :data-type="context.type"
-  >
+  <div class="year-month-day-group" :class="context.classes.element" :data-type="context.type">
     <div class="year" :class="context.classes.element">
       <div>
-        <select
-          v-model="data.selectedYear"
-          v-bind="context.attributes"
-          @change="onYearChange"
-        >
-          <option
-            v-for="o in data.years"
-            :key="o.id"
-            :value="o.value"
-            v-text="o.label"
-          />
+        <select v-model="data.selectedYear" v-bind="context.attributes" @change="onSelectChange('year')"
+          :class="noErrorCss('year')">
+          <option v-for="o in data.years" :key="o.id" :value="o.value" v-text="o.label" />
         </select>
       </div>
     </div>
     <div class="month" :class="context.classes.element">
       <div>
-        <select
-          v-model="data.selectedMonth"
-          v-bind="context.attributes"
-          @change="onMonthChange"
-        >
-          <option
-            v-for="o in data.months"
-            :key="o.id"
-            :value="o.value"
-            v-text="o.label"
-          />
+        <select v-model="data.selectedMonth" v-bind="context.attributes" @change="onSelectChange('month')"
+          :class="noErrorCss('month')">
+          <option v-for="o in data.months" :key="o.id" :value="o.value" v-text="o.label" />
         </select>
       </div>
     </div>
     <div class="day" :class="context.classes.element">
       <div>
-        <select
-          v-model="data.selectedDay"
-          v-bind="context.attributes"
-          @change="onDayChange"
-        >
-          <option
-            v-for="o in data.days"
-            :key="o.id"
-            :value="o.value"
-            v-text="o.label"
-          />
+        <select v-model="data.selectedDay" v-bind="context.attributes" @change="onSelectChange('day')"
+          :class="noErrorCss('day')">
+          <option v-for="o in data.days" :key="o.id" :value="o.value" v-text="o.label" />
         </select>
       </div>
     </div>
@@ -78,6 +50,9 @@ import {
 } from "@vue/composition-api";
 import { formatISO } from "date-fns";
 import { utcToZonedTime } from "date-fns-tz";
+import boolify from "boolify";
+import { drop } from "lodash";
+import { validate } from "@babel/types";
 
 const app = defineComponent({
   currencyName: "YearMonthDayFormulateInput",
@@ -108,7 +83,16 @@ const app = defineComponent({
 
     const mixinContext: any = ctx.parent;
 
-    //console.log("props.format", props.format);
+
+    console.log("props.context", props.context);
+
+
+    props.context.getValidationErrors().then((ee: any) => {
+      console.log(ee);
+
+    })
+
+    //props.context.performValidation()
 
     const numberOfDays = (date: Date) => {
       return new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
@@ -188,8 +172,6 @@ const app = defineComponent({
 
     const parseDate = (value: any, metaData: string = "") => {
       let isValidDate = false;
-      //console.log(`parseDate (${metaData})`);
-
       if (!isNaN(new Date(value).getTime())) {
         isValidDate = true;
       }
@@ -233,18 +215,18 @@ const app = defineComponent({
 
     const update = (date: Date, area: string = "") => {
       var randomNumber = random();
-      console.log(`[${randomNumber}] - ==`);
+      //console.log(`[${randomNumber}] - ==`);
 
-      console.log(`[${randomNumber}] - update - ${area} - (${date})`);
+      //console.log(`[${randomNumber}] - update - ${area} - (${date})`);
 
-      console.log("date.getDate()", date.getDate());
+      //console.log("date.getDate()", date.getDate());
 
       //console.log(
       //  `[${randomNumber}] - update - dateIso - (${date.toISOString()})`
       //);
       //console.log(`[${randomNumber}] - update - ${area} - (${date})`);
 
-      console.log("Bef - props.context.model", props.context.model);
+      console.log("Before - props.context.model", props.context.model);
 
       data.updatedContextModel = true;
       if (props.format === "date") {
@@ -253,7 +235,7 @@ const app = defineComponent({
         props.context.model = date.toISOString();
       }
 
-      console.log("Aft - props.context.model", props.context.model);
+      console.log("After - props.context.model", props.context.model);
 
       let year = date.getFullYear();
       let month = date.getMonth();
@@ -279,7 +261,7 @@ const app = defineComponent({
       area: string = ""
     ) => {
       var randomNumber = random();
-      console.log(`[${randomNumber}] - ==`);
+      //console.log(`[${randomNumber}] - ==`);
 
       //console.log(
       //  `${randomNumber} - updating - ${area} - (${year}-${month}-${day})`
@@ -313,7 +295,50 @@ const app = defineComponent({
     // Change events
     // *******************************************
 
-    const onSelectChange = (changedSelect: EnumSelect) => {
+    const onSelectChange = (dropdown: string) => {
+
+      //console.log("Boolean(0)", Boolean(data.selectedYear));
+      //console.log("year", data.selectedYear);
+      //console.log("month", data.selectedMonth);
+      //console.log("day", data.selectedDay);
+      //console.log("m", Boolean(props.context.model));
+
+      //console.log(props.context);
+
+      //props.context.model = "789";
+
+
+
+      if (Boolean(data.selectedYear) && Boolean(data.selectedMonth) && Boolean(data.selectedDay)) {
+        const date = new Date(data.selectedYear, data.selectedMonth - 1, data.selectedDay);
+        update(date);
+      } else {
+        console.log("one of the values is 0/null/undefined");
+      }
+
+
+
+      return;
+
+
+
+      //console.log("dt", dt);
+
+
+      switch (dropdown) {
+        case "year":
+          onYearChange();
+          break;
+        case "month":
+          onMonthChange();
+          break;
+        case "day":
+          onDayChange();
+          break;
+        default:
+          break;
+      }
+
       if (isDate(props.context.model)) {
         //let date = new Date(props.context.model);
 
@@ -345,16 +370,32 @@ const app = defineComponent({
     };
 
     const onYearChange = () => {
-      onSelectChange(EnumSelect.Year);
+      //onSelectChange(EnumSelect.Year);
     };
 
     const onMonthChange = () => {
-      onSelectChange(EnumSelect.Month);
+      //onSelectChange(EnumSelect.Month);
     };
 
     const onDayChange = () => {
-      onSelectChange(EnumSelect.Day);
+      //onSelectChange(EnumSelect.Day);
     };
+
+    const noErrorCss = (dropdown: string) => {
+      switch (dropdown) {
+        case "year":
+          if (Boolean(data.selectedYear)) return "no-error";
+          break;
+        case "month":
+          if (Boolean(data.selectedMonth)) return "no-error";
+          break;
+        case "day":
+          if (Boolean(data.selectedDay)) return "no-error";
+          break;
+        default:
+          break;
+      }
+    }
 
     nextTick(() => {
       var randomNumber = random();
@@ -376,8 +417,6 @@ const app = defineComponent({
 
         if (data.updatedContextModel) {
           data.updatedContextModel = false;
-          console.log("W - props.context.model", props.context.model);
-
           return;
         }
 
@@ -387,10 +426,10 @@ const app = defineComponent({
           // if the iso version (that gets saved in the model) is same as incoming value, no need to process further
           if (date.toISOString() === newValue) return;
 
-          console.log(`[${randomNumber}] - ==`);
-          console.log(`[${randomNumber}] - oldV (${oldValue})`);
-          console.log(`[${randomNumber}] - newV (${newValue})`);
-          console.log(`[${randomNumber}] - date (${date})`);
+          //console.log(`[${randomNumber}] - ==`);
+          //console.log(`[${randomNumber}] - oldV (${oldValue})`);
+          //console.log(`[${randomNumber}] - newV (${newValue})`);
+          //console.log(`[${randomNumber}] - date (${date})`);
           console.log(`[${randomNumber}] - diso (${date.toISOString()})`);
 
           update(date, "watch");
@@ -415,11 +454,10 @@ const app = defineComponent({
     return {
       data,
       updateModel,
-      onYearChange,
-      onMonthChange,
-      onDayChange,
+      onSelectChange,
       model,
       props,
+      noErrorCss
     };
   },
 });
@@ -441,8 +479,8 @@ export default app;
     margin-bottom: 0;
   }
 }
-.formulate-input[data-classification="select"]
-  .formulate-input-element::before {
+
+.formulate-input[data-classification="select"] .formulate-input-element::before {
   content: "";
   width: 0;
   height: 0;
@@ -453,5 +491,10 @@ export default app;
   margin-top: -0.1em;
   right: 1em;
   position: absolute;
+}
+
+.no-error {
+  border-color: #cecece !important;
+  background-color: transparent !important;
 }
 </style>
