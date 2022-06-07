@@ -993,38 +993,1240 @@ export const collections = {
       value: 6153,
     },
   ],
-  Titles: [
+  Boolean: [
     {
-      label: "Dr.",
-      value: 100000000,
+      label: "Yes",
+      value: "true",
     },
     {
-      label: "Miss",
-      value: 100000001,
+      label: "No",
+      value: "false",
+    },
+  ],
+  Bool: [
+    {
+      label: "Yes",
+      value: true,
     },
     {
-      label: "Mr",
-      value: 100000002,
+      label: "No",
+      value: false,
+    },
+  ],
+  Explore: {
+    HighestTertiaryQualification: [
+      {
+        label: "Diploma",
+        value: 100000000,
+      },
+      {
+        label: "Degree",
+        value: 100000001,
+      },
+      {
+        label: "Honors",
+        value: 100000002,
+      },
+      {
+        label: "Masters",
+        value: 100000003,
+      },
+      {
+        label: "PHD",
+        value: 100000004,
+      },
+      {
+        label: "Other",
+        value: 100000005,
+      },
+    ],
+    WorkStatus: [
+      {
+        label: "Full-time employment",
+        value: 100000000,
+      },
+      {
+        label: "Part-time employment",
+        value: 100000001,
+      },
+      {
+        label: "Self-employed",
+        value: 100000002,
+      },
+      {
+        label: "Business Director",
+        value: 100000006,
+      },
+      {
+        label: "Full-time student",
+        value: 100000003,
+      },
+      {
+        label: "Retired",
+        value: 100000004,
+      },
+      {
+        label: "Stay-at-home",
+        value: 100000008,
+      },
+      {
+        label: "Unemployed",
+        value: 100000005,
+      },
+      {
+        label: "Other",
+        value: 100000007,
+      },
+    ],
+    InPersonOrRemote: [
+      {
+        label: "Desk-Based",
+        value: 100000000,
+      },
+      {
+        label: "Mobile",
+        value: 100000001,
+      },
+    ],
+  },
+  PrimaryApplicant: {
+    Title: [
+      {
+        label: "Dr.",
+        value: 100000000,
+      },
+      {
+        label: "Miss",
+        value: 100000001,
+      },
+      {
+        label: "Mr",
+        value: 100000002,
+      },
+      {
+        label: "Mrs",
+        value: 100000003,
+      },
+      {
+        label: "Prof",
+        value: 100000004,
+      },
+      {
+        label: "Sir",
+        value: 100000005,
+      },
+      {
+        label: "Ms",
+        value: 100000006,
+      },
+      {
+        label: "Adv",
+        value: 100000007,
+      },
+    ],
+    Gender: [
+      {
+        label: "Male",
+        value: 1,
+      },
+      {
+        label: "Female",
+        value: 2,
+      },
+    ],
+    PreferredContactMethod: [
+      {
+        label: "Any",
+        value: "1",
+      },
+      {
+        label: "Email",
+        value: "2",
+      },
+      {
+        label: "Phone",
+        value: "3",
+      },
+      {
+        label: "Mobile",
+        value: "100000000",
+      },
+      {
+        label: "Fax",
+        value: "4",
+      },
+      {
+        label: "Mail",
+        value: "5",
+      },
+    ],
+    WorkStatus: [
+      {
+        label: "Full-time employment",
+        value: 100000000,
+      },
+      {
+        label: "Part-time employment",
+        value: 100000001,
+      },
+      {
+        label: "Self-employed",
+        value: 100000002,
+      },
+      {
+        label: "Business Director",
+        value: 100000006,
+      },
+      {
+        label: "Full-time student",
+        value: 100000003,
+      },
+      {
+        label: "Retired",
+        value: 100000004,
+      },
+      {
+        label: "Stay-at-home",
+        value: 100000008,
+      },
+      {
+        label: "Unemployed",
+        value: 100000005,
+      },
+      {
+        label: "Other",
+        value: 100000007,
+      },
+    ],
+    InPersonOrRemote: [
+      {
+        label: "Desk-Based",
+        value: 100000000,
+      },
+      {
+        label: "Mobile",
+        value: 100000001,
+      },
+    ],
+    AdditionalQualifications: {
+      Code: [
+        {
+          label: "Diploma",
+          value: 100000000,
+        },
+        {
+          label: "Degree",
+          value: 100000001,
+        },
+        {
+          label: "Honors",
+          value: 100000002,
+        },
+        {
+          label: "Masters",
+          value: 100000003,
+        },
+        {
+          label: "PHD",
+          value: 100000004,
+        },
+        {
+          label: "Other",
+          value: 100000005,
+        },
+      ],
+    },
+    HighestTertiaryQualification: [
+      {
+        label: "Diploma",
+        value: 100000000,
+      },
+      {
+        label: "Degree",
+        value: 100000001,
+      },
+      {
+        label: "Honors",
+        value: 100000002,
+      },
+      {
+        label: "Masters",
+        value: 100000003,
+      },
+      {
+        label: "PHD",
+        value: 100000004,
+      },
+      {
+        label: "Other",
+        value: 100000005,
+      },
+    ],
+    AdditionalIncome: {
+      Type: [
+        {
+          label: "Domestic Dividends",
+          value: 100000000,
+        },
+        {
+          label: "Foreign Dividends",
+          value: 100000001,
+        },
+        {
+          label: "Interest",
+          value: 100000002,
+        },
+        {
+          label: "Rental",
+          value: 100000003,
+        },
+        {
+          label: "Other",
+          value: 100000004,
+        },
+      ],
+    },
+    Assets: {
+      Type: [
+        {
+          label: "Property",
+          value: 100000000,
+        },
+        {
+          label: "Investment",
+          value: 100000001,
+        },
+      ],
+    },
+    Budget: {
+      BudgetOrTotalExpenses: [
+        {
+          label: "Complete budget",
+          value: 100000000,
+        },
+        {
+          label: "Give total expenses figure",
+          value: 100000001,
+        },
+      ],
+    },
+  },
+  HavePartner: [
+    {
+      label: "Yes",
+      value: "true",
     },
     {
-      label: "Mrs",
-      value: 100000003,
+      label: "No",
+      value: "false",
+    },
+  ],
+  Partner: {
+    Title: [
+      {
+        label: "Dr.",
+        value: 100000000,
+      },
+      {
+        label: "Miss",
+        value: 100000001,
+      },
+      {
+        label: "Mr",
+        value: 100000002,
+      },
+      {
+        label: "Mrs",
+        value: 100000003,
+      },
+      {
+        label: "Prof",
+        value: 100000004,
+      },
+      {
+        label: "Sir",
+        value: 100000005,
+      },
+      {
+        label: "Ms",
+        value: 100000006,
+      },
+      {
+        label: "Adv",
+        value: 100000007,
+      },
+    ],
+    Gender: [
+      {
+        label: "Male",
+        value: 100000000,
+      },
+      {
+        label: "Female",
+        value: 100000001,
+      },
+    ],
+    MaritalStatus: [
+      {
+        label: "Single",
+        value: 1,
+      },
+      {
+        label: "Married",
+        value: 2,
+      },
+      {
+        label: "Divorced",
+        value: 3,
+      },
+      {
+        label: "Widowed",
+        value: 4,
+      },
+      {
+        label: "Separated",
+        value: 200000,
+      },
+      {
+        label: "Cohabiting",
+        value: 100000000,
+      },
+    ],
+    PreferredContactMethod: [
+      {
+        value: "100000000",
+        label: "Email",
+      },
+      {
+        value: "100000001",
+        label: "Mobile",
+      },
+      {
+        value: "100000002",
+        label: "Landline",
+      },
+    ],
+    HighestTertiaryQualification: [
+      {
+        label: "Diploma",
+        value: 100000000,
+      },
+      {
+        label: "Degree",
+        value: 100000001,
+      },
+      {
+        label: "Honors",
+        value: 100000002,
+      },
+      {
+        label: "Masters",
+        value: 100000003,
+      },
+      {
+        label: "PHD",
+        value: 100000004,
+      },
+      {
+        label: "Other",
+        value: 100000005,
+      },
+    ],
+    AdditionalIncome: {
+      Type: [
+        {
+          label: "Domestic Dividends",
+          value: 100000000,
+        },
+        {
+          label: "Foreign Dividends",
+          value: 100000001,
+        },
+        {
+          label: "Interest",
+          value: 100000002,
+        },
+        {
+          label: "Rental",
+          value: 100000003,
+        },
+        {
+          label: "Other",
+          value: 100000004,
+        },
+      ],
+    },
+    Assets: {
+      Type: [
+        {
+          label: "Property",
+          value: 100000000,
+        },
+        {
+          label: "Investment",
+          value: 100000001,
+        },
+      ],
+    },
+  },
+  Dependents: {
+    Gender: [
+      {
+        label: "Male",
+        value: 100000000,
+      },
+      {
+        label: "Female",
+        value: 100000001,
+      },
+    ],
+    SpecialAttributes: [
+      {
+        label: "Learning difficulties",
+        value: 100000000,
+      },
+      {
+        label: "Disability",
+        value: 100000001,
+      },
+      {
+        label: "Academically gifted",
+        value: 100000002,
+      },
+      {
+        label: "Provincial/National sportsperson",
+        value: 100000003,
+      },
+      {
+        label: "Other",
+        value: 100000004,
+      },
+      {
+        label: "N/A",
+        value: 100000005,
+      },
+    ],
+  },
+  Languages: [
+    {
+      "@odata.etag": 'W/"68806622"',
+      label: "Abkhaz",
+      value: "e3f52781-b2fa-eb11-8114-0050560111da",
     },
     {
-      label: "Prof",
-      value: 100000004,
+      "@odata.etag": 'W/"68806623"',
+      label: "Afrikaans",
+      value: "e5f52781-b2fa-eb11-8114-0050560111da",
     },
     {
-      label: "Sir",
-      value: 100000005,
+      "@odata.etag": 'W/"68806625"',
+      label: "Albanian",
+      value: "e7f52781-b2fa-eb11-8114-0050560111da",
     },
     {
-      label: "Ms",
-      value: 100000006,
+      "@odata.etag": 'W/"68806627"',
+      label: "Amharic",
+      value: "e9f52781-b2fa-eb11-8114-0050560111da",
     },
     {
-      label: "Adv",
-      value: 100000007,
+      "@odata.etag": 'W/"68806628"',
+      label: "Arabic",
+      value: "ebf52781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806629"',
+      label: "Armenian",
+      value: "edf52781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806630"',
+      label: "Assamese",
+      value: "eff52781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806631"',
+      label: "Basque",
+      value: "f1f52781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806632"',
+      label: "Belarusian",
+      value: "f3f52781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806633"',
+      label: "Bengali",
+      value: "f5f52781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806634"',
+      label: "Berber",
+      value: "f7f52781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806635"',
+      label: "Bhojpuri",
+      value: "f9f52781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806637"',
+      label: "Bosnian",
+      value: "fbf52781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806638"',
+      label: "Bulgarian",
+      value: "fdf52781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806639"',
+      label: "Burmese",
+      value: "fff52781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806641"',
+      label: "Cantonese Chinese",
+      value: "01f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806642"',
+      label: "Catalan",
+      value: "03f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806643"',
+      label: "Chichewa",
+      value: "05f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806644"',
+      label: "Chinese",
+      value: "07f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806646"',
+      label: "Chipewyan",
+      value: "09f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806647"',
+      label: "Cree",
+      value: "0bf62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806648"',
+      label: "Croatian",
+      value: "0df62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806649"',
+      label: "Czech",
+      value: "0ff62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806650"',
+      label: "Danish",
+      value: "11f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806651"',
+      label: "Dutch",
+      value: "13f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806652"',
+      label: "English",
+      value: "15f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806653"',
+      label: "Estonian",
+      value: "17f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806654"',
+      label: "Faroese",
+      value: "19f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806655"',
+      label: "Fijian",
+      value: "1bf62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806657"',
+      label: "Filipino",
+      value: "1df62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806659"',
+      label: "Finnish",
+      value: "1ff62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806660"',
+      label: "French",
+      value: "21f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806661"',
+      label: "Frisian",
+      value: "23f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806662"',
+      label: "Fula",
+      value: "25f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806663"',
+      label: "Gaelic",
+      value: "27f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806664"',
+      label: "Gan",
+      value: "29f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806665"',
+      label: "Georgian",
+      value: "2bf62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806666"',
+      label: "German",
+      value: "2df62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806667"',
+      label: "Greek",
+      value: "2ff62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806668"',
+      label: "Gujarati",
+      value: "31f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806669"',
+      label: "Haitian Creole",
+      value: "33f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806670"',
+      label: "Hakka",
+      value: "35f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806671"',
+      label: "Hausa",
+      value: "37f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806672"',
+      label: "Hawaiian",
+      value: "39f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806673"',
+      label: "Hebrew",
+      value: "3bf62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806674"',
+      label: "Hindi",
+      value: "3df62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806675"',
+      label: "Hmong",
+      value: "3ff62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806676"',
+      label: "Hungarian",
+      value: "41f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806677"',
+      label: "Ibibio",
+      value: "43f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806678"',
+      label: "Icelandic",
+      value: "45f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806679"',
+      label: "Igbo",
+      value: "47f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806680"',
+      label: "Inuinnaqtun",
+      value: "49f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806681"',
+      label: "Inuktitut",
+      value: "4bf62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806682"',
+      label: "Irish",
+      value: "4df62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806683"',
+      label: "Italian",
+      value: "4ff62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806684"',
+      label: "Japanese",
+      value: "51f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806685"',
+      label: "Javanese",
+      value: "53f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806686"',
+      label: "Kannada",
+      value: "55f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806687"',
+      label: "Kashmiri",
+      value: "57f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806688"',
+      label: "Kazakh",
+      value: "59f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806689"',
+      label: "Khmer",
+      value: "5bf62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806690"',
+      label: "Korean",
+      value: "5df62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806691"',
+      label: "Kurdish",
+      value: "5ff62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806692"',
+      label: "Kyrgyz",
+      value: "61f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806693"',
+      label: "Lao",
+      value: "63f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806694"',
+      label: "Latvian",
+      value: "65f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806695"',
+      label: "Lithuanian",
+      value: "67f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806696"',
+      label: "Lugandan",
+      value: "69f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806697"',
+      label: "Luxembourgish",
+      value: "6bf62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806698"',
+      label: "Macedonian",
+      value: "6df62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806699"',
+      label: "Madurese",
+      value: "6ff62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806700"',
+      label: "Maithili",
+      value: "71f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806701"',
+      label: "Malagasy",
+      value: "73f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806702"',
+      label: "Malay (or Maysian)",
+      value: "75f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806703"',
+      label: "Malayalam",
+      value: "77f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806704"',
+      label: "Maltese",
+      value: "79f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806705"',
+      label: "Mandarin Chinese",
+      value: "7bf62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806706"',
+      label: "Manx Gaelic",
+      value: "7df62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806707"',
+      label: "Maori",
+      value: "7ff62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806708"',
+      label: "Marathi",
+      value: "81f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806709"',
+      label: "Mayan",
+      value: "83f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806710"',
+      label: "Min",
+      value: "85f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806711"',
+      label: "Moldovian",
+      value: "87f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806712"',
+      label: "Mongolian",
+      value: "89f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806713"',
+      label: "Montenegran",
+      value: "8bf62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806714"',
+      label: "Ndebele",
+      value: "8df62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806715"',
+      label: "Nepali",
+      value: "8ff62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806716"',
+      label: "Northern Sotho",
+      value: "91f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806717"',
+      label: "Norwegian",
+      value: "93f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806718"',
+      label: "Oriya",
+      value: "95f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806719"',
+      label: "Oromo",
+      value: "97f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806720"',
+      label: "Ossetian",
+      value: "99f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806721"',
+      label: "Pashto",
+      value: "9bf62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806722"',
+      label: "Persian",
+      value: "9df62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806723"',
+      label: "Polish",
+      value: "9ff62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806724"',
+      label: "Portuguese",
+      value: "a1f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806725"',
+      label: "Punjabi",
+      value: "a3f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806726"',
+      label: "Quechua",
+      value: "a5f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806727"',
+      label: "Romanian",
+      value: "a7f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806728"',
+      label: "Russian",
+      value: "a9f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806729"',
+      label: "Sami",
+      value: "abf62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806730"',
+      label: "Sanskrit",
+      value: "adf62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806731"',
+      label: "Serbian",
+      value: "aff62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806732"',
+      label: "Shona",
+      value: "b1f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806733"',
+      label: "Sign Language (many nationalities)",
+      value: "b3f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806734"',
+      label: "Sindhi",
+      value: "b5f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806735"',
+      label: "Sinhala",
+      value: "b7f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806736"',
+      label: "Slovak",
+      value: "b9f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806737"',
+      label: "Slovene",
+      value: "bbf62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806738"',
+      label: "Somali",
+      value: "bdf62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806739"',
+      label: "Sotho",
+      value: "bff62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806740"',
+      label: "Spanish",
+      value: "c1f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806741"',
+      label: "Sranan Tongo",
+      value: "c3f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806742"',
+      label: "Sunda",
+      value: "c5f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806743"',
+      label: "Swahili",
+      value: "c7f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806744"',
+      label: "Swati",
+      value: "c9f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806745"',
+      label: "Swedish",
+      value: "cbf62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806746"',
+      label: "Tagalog",
+      value: "cdf62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806747"',
+      label: "Tahitian",
+      value: "cff62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806748"',
+      label: "Tajik",
+      value: "d1f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806749"',
+      label: "Tamil",
+      value: "d3f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806750"',
+      label: "Telugu",
+      value: "d5f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806751"',
+      label: "Tetum",
+      value: "d7f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806752"',
+      label: "Thai",
+      value: "d9f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806753"',
+      label: "Tibetan",
+      value: "dbf62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806754"',
+      label: "Tok Pisin",
+      value: "ddf62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806755"',
+      label: "Tsonga",
+      value: "dff62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806756"',
+      label: "Turkish",
+      value: "e1f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806757"',
+      label: "Turkmen",
+      value: "e3f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806758"',
+      label: "Twi",
+      value: "e5f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806759"',
+      label: "Ukrainian",
+      value: "e7f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806760"',
+      label: "Urdu",
+      value: "e9f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806761"',
+      label: "Uzbek",
+      value: "ebf62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806762"',
+      label: "Venda",
+      value: "edf62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806763"',
+      label: "Vietnamese",
+      value: "eff62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806764"',
+      label: "Welsh",
+      value: "f1f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806765"',
+      label: "Wu",
+      value: "f3f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806766"',
+      label: "Xhosa",
+      value: "f5f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806767"',
+      label: "Xiang",
+      value: "f7f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806768"',
+      label: "Yiddish",
+      value: "f9f62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806769"',
+      label: "Yoruba",
+      value: "fbf62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806770"',
+      label: "Yue",
+      value: "fdf62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806771"',
+      label: "Zhuang",
+      value: "fff62781-b2fa-eb11-8114-0050560111da",
+    },
+    {
+      "@odata.etag": 'W/"68806772"',
+      label: "Zulu",
+      value: "01f72781-b2fa-eb11-8114-0050560111da",
     },
   ],
 };

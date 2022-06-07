@@ -1,30 +1,46 @@
 <script lang="ts">
-import {
-  defineComponent,
-  onMounted,
-  reactive,
-  ref,
-} from "@vue/composition-api";
+import { defineComponent, onMounted, ref } from "@vue/composition-api";
 import { useAppStore } from "../stores/appStore";
-//import logicalDataModel from "../data/logical-data-model.json";
+
 import { logicalDataModel } from "../data/logical-data-model";
-import Page1 from "../components/Page1.vue";
-import Page2 from "../components/Page2.vue";
-import Page3 from "../components/Page3.vue";
-import { get, method, set } from "lodash";
+//import { logicalDataModel } from "../data/logical-data-model-group";
+
+import Page1JsonPersonalDetails from "../components/pages/Page1JsonPersonalDetails.vue";
+import Page1PersonalDetails from "../components/pages/Page1PersonalDetails.vue";
+import Page2ContactDetails from "../components/pages/Page2ContactDetails.vue";
+import Page3Nationalities from "../components/pages/Page3Nationalities.vue";
+import Page4FamilyAncestry from "../components/pages/Page4FamilyAncestry.vue";
+import Page5EducationAndEmployment from "../components/pages/Page5EducationAndEmployment.vue";
+import Page6IncomeAndAssets from "../components/pages/Page6IncomeAndAssets.vue";
+import Page7LifeStyle from "../components/pages/Page7LifeStyle.vue";
+import Page8Objectives from "../components/pages/Page8Objectives.vue";
+import Testing from "../components/pages/Testing.vue";
+import { get, set } from "lodash";
 
 export default defineComponent({
   name: "PersonalDetails",
   components: {
-    Page1,
-    Page2,
-    Page3,
+    // json pages
+    Page1JsonPersonalDetails,
+
+    // markup pages
+    Page1PersonalDetails,
+    Page2ContactDetails,
+    Page3Nationalities,
+    Page4FamilyAncestry,
+    Page5EducationAndEmployment,
+    Page6IncomeAndAssets,
+    Page7LifeStyle,
+    Page8Objectives,
+    Testing,
   },
   props: {},
   setup(props, context) {
     const store = useAppStore();
 
     const formRef: any = ref(null);
+
+    const activePage = "Testing";
 
     const handleSubmit = async (data: any) => {
       context.emit("handleSubmit", data);
@@ -38,8 +54,6 @@ export default defineComponent({
       return obj;
     };
 
-    const data = reactive({});
-
     const nextClick = async () => {
       const appRef: any = context.refs.appRef;
       const valid = await appRef.$refs.formRef.formSubmitted();
@@ -52,10 +66,9 @@ export default defineComponent({
     };
 
     onMounted(() => {
-      logicalDataModel.PrimaryApplicant.AdditionalPassports = [];
-
+      // TODO: re-add explore and primary-applicant
       const structuredResponse = setObjectsAsArrays(logicalDataModel, [
-        "Explore",
+        //"Explore",
         "PrimaryApplicant",
         "Partner",
       ]);
@@ -63,7 +76,7 @@ export default defineComponent({
       store.logicalDataModel = structuredResponse;
     });
 
-    return { formRef, store, handleSubmit, nextClick };
+    return { activePage, formRef, store, handleSubmit, nextClick };
   },
 });
 </script>
@@ -71,7 +84,7 @@ export default defineComponent({
 <template>
   <div>
     <component
-      is="Page3"
+      :is="activePage"
       ref="appRef"
       @handleSubmit="handleSubmit"
       :modelProp="store.logicalDataModel"
@@ -88,6 +101,7 @@ export default defineComponent({
 [data-classification="select"][data-is-showing-errors="true"] {
   .formulate-input-wrapper {
     .formulate-input-element--text,
+    .formulate-input-element--email,
     .formulate-input-element--number {
       input {
         border: 1px solid red;
